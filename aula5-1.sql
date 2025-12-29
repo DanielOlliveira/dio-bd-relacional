@@ -32,6 +32,11 @@ SELECT nome
 FROM usuarios
 WHERE id NOT IN (SELECT id_usuario FROM reservas);
 
+-- Destinos que não tem nenhuma reserva
+SELECT * FROM destinos
+WHERE id NOT IN (SELECT id_destino FROM reservas);
+
+
 -- Subconsulta para encontrar os destinos menos populares (com menos reservas):
 
 SELECT nome
