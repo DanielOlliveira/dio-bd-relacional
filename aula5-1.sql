@@ -8,7 +8,9 @@ INNER JOIN reservas rs
 -- Traz todos os usuario e suas reservas se tiver
 SELECT * FROM usuarios us
 INNER JOIN reservas rs
-	ON us.id = rs.id_usuario;
+	ON us.id = rs.id_destino
+INNER JOIN destinos ds
+    ON ds.id = rs.id_destino;
 
 INSERT INTO viagens.destinos ( nome, descricao) VALUES 
 ('Deestino sem reserva', 'Uma bela praia com areias brancas e mar cristalino')
